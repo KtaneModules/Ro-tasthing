@@ -14,10 +14,9 @@ MonoBehaviour:
   id: ro
   title: Ro
   author: TasThing
-  description: '...man? ...bot? ...utine? ...chambeau?
-
-
-    Module idea and implementation by TasThing.'
+  description: "...man? ...bot? ...utine? ...chambeau?\r\n\r\nModule idea and implementation
+    by TasThing.\r\n\r\n[url=https://ktane.timwi.de/HTML/Ro.html]Manual HTML[/url]\r\n[url=https://ktane.timwi.de/PDF/Ro.pdf]Manual
+    PDF[/url]"
   version: 1.0
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 6ac92c45885af1549adf068523450891, type: 3}

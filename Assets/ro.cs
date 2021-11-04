@@ -19,7 +19,6 @@ public class ro : MonoBehaviour
 
     private int[] currentState;
     private int[] desiredState;
-    private int motherfucker;
 
     private static readonly int[][] adjacentIndices = new int[][]
     {
@@ -64,9 +63,8 @@ public class ro : MonoBehaviour
         {
             diamonds[i].GetComponent<Renderer>().material.color = diamondColors[i];
         }
-        motherfucker = rnd.Range(0, 9);
-        for (int i = 0; i < 1; i++)
-            Swap(motherfucker);
+        for (int i = 0; i < 100; i++)
+            Swap(rnd.Range(0, 9));
         for (int i = 0; i < 16; i++)
         {
             diamonds[i].GetComponent<Renderer>().material.color = diamondColors[currentState[i] - 1];
