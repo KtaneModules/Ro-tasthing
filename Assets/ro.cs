@@ -15,6 +15,7 @@ public class ro : MonoBehaviour
 
     public KMSelectable[] buttons;
     public Transform[] diamonds;
+    public TextMesh[] colorblindTexts;
     public Color[] diamondColors;
 
     private int[] currentState;
@@ -65,9 +66,14 @@ public class ro : MonoBehaviour
         }
         for (int i = 0; i < 100; i++)
             Swap(rnd.Range(0, 9));
+        var whitePeople = new int[] { 1, 7, 9, 10, 15 };
         for (int i = 0; i < 16; i++)
         {
             diamonds[i].GetComponent<Renderer>().material.color = diamondColors[currentState[i] - 1];
+            if (GetComponent<KMColorblindMode>().ColorblindModeActive)
+                colorblindTexts[i].text = Enumerable.Range(1, 16).Select(x => x.ToString()).ToArray()[currentState[i] - 1];
+            if (whitePeople.Contains(currentState[i]))
+                colorblindTexts[i].color = Color.white;
         };
         Debug.LogFormat("[Ro #{0}] Starting state: {1}", moduleId, currentState.Join(", "));
     }
